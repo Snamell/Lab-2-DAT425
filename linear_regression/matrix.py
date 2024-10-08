@@ -95,10 +95,8 @@ def loadtxt(file):
 
     matrix=[]
     f = open(file,"r")
-    numbers = f.read()
-    print(numbers)
+    for line in f:
+        matrix.append([float(x) for x in line.split()])
     f.close()
     
     return matrix
-
-print(loadtxt("chirps.txt"))
