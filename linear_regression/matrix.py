@@ -96,7 +96,7 @@ def loadtxt(file):
     matrix=[]
     f = open(file,"r")
     for line in f:
-        matrix.append([float(x) for x in line.split()])
+        matrix.append([float(x) for x in line.split()]) # splits each line between the spaces and appends them as floats
     f.close()
     
     return matrix
