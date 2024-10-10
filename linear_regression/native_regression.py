@@ -23,4 +23,4 @@ def native_regression(file):
     plt.show()
     
 
-native_regression("dataset1.txt")
+# ange fil i native_regression("filhär.txt")
