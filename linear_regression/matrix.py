@@ -45,13 +45,11 @@ def matmul(M1,M2):
                 new_matrix_mul.append(new_row)
                 new_row=[]                                  
     
-    for i in range(len(M1)):                                
-        for j in range(len(M2[0])):                         
-            for n in range(len(M2)):                        # Iterates through the rows of matrix M2
-                try:
-                 new_matrix_mul[i][j]+=(M1[i][n]*M2[n][j])  # Replaces the correct position of the matrix filled with 0:s with the product of the corresponding values in M1 and M2
-                except IndexError:                          # IndexError sometimes occure. This fixes it
-                    break
+    for i, row in enumerate(M1):                                
+        for n, column in enumerate(M2):                        # Iterates through the rows of matrix M2
+            for j, column_element in enumerate(column):
+                new_matrix_mul[i][j]+=(row[n]*column_element)  # Replaces the correct position of the matrix filled with 0:s with the product of the corresponding values in M1 and M2
+
     
     return new_matrix_mul
 
